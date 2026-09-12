@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NILARA LOOM STORY</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   WEBSITE DESIGN
+   YOU DON'T NEED TO EDIT THIS SECTION
+   ===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f1e4;
+    color:#43251b;
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* TOP BAR */
+
+.topbar{
+    background:#5a211d;
+    color:#f8e8c5;
+    text-align:center;
+    padding:9px 15px;
+    font-size:12px;
+    letter-spacing:1.5px;
+}
+
+
+/* HEADER */
+
+header{
+    background:#fffaf0;
+    border-bottom:1px solid #d6b77c;
+    padding:22px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    text-align:center;
+}
+
+.logo h1{
+    font-family:'Playfair Display',serif;
+    font-size:31px;
+    letter-spacing:3px;
+    color:#641f1c;
+}
+
+.logo p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:15px;
+    letter-spacing:4px;
+    color:#a37a35;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#542b20;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+nav a:hover{
+    color:#a8792e;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:580px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+    overflow:hidden;
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    color:white;
+    max-width:750px;
+    padding:30px;
+}
+
+.small-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    letter-spacing:5px;
+    color:#f5d99a;
+}
+
+.hero h2{
+    font-family:'Playfair Display',serif;
+    font-size:68px;
+    line-height:1;
+    margin:18px 0;
+    letter-spacing:2px;
+}
+
+.hero p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+    display:inline-block;
+
+    background:#d0a34d;
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:14px 30px;
+
+    font-size:13px;
+    letter-spacing:2px;
+
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:#5a211d;
+}
+
+
+/* GENERAL SECTION */
+
+.section{
+    padding:75px 6%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-heading span{
+    font-family:'Cormorant Garamond',serif;
+    color:#a8792e;
+    font-size:19px;
+    letter-spacing:3px;
+}
+
+.section-heading h2{
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    color:#5a211d;
+    margin-top:7px;
+}
+
+.gold-line{
+    width:70px;
+    height:2px;
+    background:#c49a48;
+    margin:18px auto;
+}
+
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+}
+
+.product{
+    background:#fffaf0;
+    border:1px solid #dfc895;
+    padding:12px;
+
+    transition:.3s;
+
+    cursor:pointer;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(79,43,25,.12);
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-image{
+    width:100%;
+    height:430px;
+
+    overflow:hidden;
+
+    background:#eadbc0;
+
+    position:relative;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:opacity .5s ease;
+}
+
+
+/* SLIDER DOTS */
+
+.slider-dots{
+    position:absolute;
+
+    bottom:12px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:6px;
+}
+
+.slider-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.6);
+
+    transition:.3s;
+}
+
+.slider-dot.active{
+    background:#fff;
+    transform:scale(1.3);
+}
+
+
+/* PRODUCT INFORMATION */
+
+.product-info{
+    text-align:center;
+    padding:20px 10px 15px;
+}
+
+.product-info h3{
+    font-family:'Playfair Display',serif;
+    font-size:23px;
+    color:#5a211d;
+    margin-bottom:5px;
+}
+
+.product-info p{
+    font-size:13px;
+    color:#866b55;
+    margin-bottom:16px;
+}
+
+.price{
+    font-size:15px;
+    color:#9a7028;
+    margin-bottom:16px;
+}
+
+.whatsapp{
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#5a211d;
+    color:white;
+
+    padding:11px 20px;
+
+    font-size:12px;
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    background:#9a7028;
+}
+
+
+/* OUR STORY */
+
+.about{
+    background:#5a211d;
+    color:#fff8e8;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:50px;
+
+    padding:75px 9%;
+}
+
+.about-image{
+    height:480px;
+
+    background-size:cover;
+    background-position:center;
+}
+
+.about-text span{
+    color:#e0bb6b;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:20px;
+
+    letter-spacing:3px;
+}
+
+.about-text h2{
+    font-family:'Playfair Display',serif;
+
+    font-size:45px;
+
+    margin:12px 0 20px;
+}
+
+.about-text p{
+    color:#eadbc8;
+
+    line-height:1.9;
+
+    font-size:14px;
+}
+
+
+/* FEATURES */
+
+.features{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    text-align:center;
+
+    gap:30px;
+}
+
+.feature{
+    padding:30px;
+}
+
+.feature-icon{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.feature h3{
+    font-family:'Playfair Display',serif;
+
+    font-size:22px;
+
+    margin-bottom:8px;
+}
+
+.feature p{
+    font-size:13px;
+
+    color:#866b55;
+
+    line-height:1.7;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#351914;
+
+    color:#eadbc1;
+
+    text-align:center;
+
+    padding:45px 20px;
+}
+
+.footer-logo{
+    font-family:'Playfair Display',serif;
+
+    font-size:27px;
+
+    letter-spacing:3px;
+
+    color:#e4c27d;
+}
+
+footer p{
+    margin-top:10px;
+
+    font-size:12px;
+
+    color:#bda991;
+}
+
+.social{
+    margin-top:20px;
+}
+
+.social a{
+    color:#e4c27d;
+
+    text-decoration:none;
+
+    margin:0 10px;
+
+    font-size:13px;
+}
+
+
+/* =====================================================
+   INDIVIDUAL SAREE GALLERY
+   ===================================================== */
+
+.modal{
+    display:none;
+
+    position:fixed;
+
+    z-index:9999;
+
+    inset:0;
+
+    background:rgba(30,12,8,.92);
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(1000px,95vw);
+
+    max-height:95vh;
+
+    background:#fffaf0;
+
+    overflow:auto;
+
+    position:relative;
+
+    padding:25px;
+}
+
+.close-modal{
+    position:absolute;
+
+    right:18px;
+    top:12px;
+
+    width:38px;
+    height:38px;
+
+    border:none;
+
+    background:#5a211d;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    z-index:5;
+}
+
+.modal-gallery{
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:15px;
+}
+
+.modal-main-image{
+    width:100%;
+
+    height:560px;
+
+    background:#eadbc0;
+
+    overflow:hidden;
+}
+
+.modal-main-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+    transition:opacity .25s ease;
+}
+
+
+/* THUMBNAILS */
+
+.modal-thumbnails{
+    display:flex;
+
+    gap:10px;
+
+    overflow-x:auto;
+
+    padding:5px 0;
+}
+
+.modal-thumb{
+    width:90px;
+    height:110px;
+
+    flex-shrink:0;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    border:2px solid transparent;
+}
+
+.modal-thumb.active{
+    border-color:#a8792e;
+}
+
+
+/* PREVIOUS / NEXT */
+
+.modal-controls{
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:12px;
+}
+
+.modal-control{
+    border:none;
+
+    background:#5a211d;
+
+    color:#fff;
+
+    padding:10px 25px;
+
+    cursor:pointer;
+
+    font-family:'Poppins',sans-serif;
+}
+
+.modal-control:hover{
+    background:#9a7028;
+}
+
+
+/* MODAL DETAILS */
+
+.modal-info{
+    text-align:center;
+
+    padding:20px 10px 5px;
+}
+
+.modal-info h2{
+    font-family:'Playfair Display',serif;
+
+    color:#5a211d;
+
+    font-size:32px;
+}
+
+.modal-info p{
+    color:#866b55;
+
+    margin:7px 0 12px;
+}
+
+.modal-price{
+    color:#9a7028;
+
+    font-size:17px;
+
+    margin-bottom:15px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    nav{
+        gap:18px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:500px;
+    }
+
+    .hero h2{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:19px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+
+        gap:22px;
+    }
+
+    .product-image{
+        height:430px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+
+        padding:55px 7%;
+    }
+
+    .about-image{
+        height:380px;
+    }
+
+    .about-text h2{
+        font-size:38px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:55px 6%;
+    }
+
+    .section-heading h2{
+        font-size:35px;
+    }
+
+    .modal{
+        padding:8px;
+    }
+
+    .modal-box{
+        padding:15px;
+
+        width:100%;
+
+        max-height:96vh;
+    }
+
+    .modal-main-image{
+        height:55vh;
+    }
+
+    .modal-thumb{
+        width:70px;
+        height:85px;
+    }
+
+    .modal-info h2{
+        font-size:27px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     =========================================================
+
+          ✏️✏️✏️ EDIT YOUR WEBSITE HERE ✏️✏️✏️
+
+     This is the ONLY section you normally need to edit.
+
+     =========================================================
+     ========================================================= -->
+
+
+<script>
+
+/* =========================================================
+   1. YOUR WHATSAPP NUMBER
+   =========================================================
+
+   Enter your WhatsApp number with country code.
+
+   Example:
+   India = 91
+
+   If your number is:
+   9876543210
+
+   Write:
+   919876543210
+
+   Do NOT use + or spaces.
+   ========================================================= */
+
+const whatsappNumber = "7560948414";
+
+
+/* =========================================================
+   2. WEBSITE IMAGES
+   =========================================================
+
+   Put your images inside the "images" folder.
+
+   Example folder:
+
+   NILAARA-LOOM-STORY
+       |
+       ├── index.html
+       |
+       └── images
+             ├── hero.jpg
+             ├── our-story.jpg
+             ├── nilavu-1.jpg
+             ├── nilavu-2.jpg
+             └── etc...
+
+   ========================================================= */
+
+const heroImage = "IMAGE1.png";
+
+const ourStoryImage = "nilaralogo.jpg";
+
+
+/* =========================================================
+   3. YOUR SAREES
+   =========================================================
+
+   Each saree has:
+
+   name
+   description
+   price
+   4 images
+
+   Just change these details.
+
+   ========================================================= */
+
+const sarees = [
+
+    /* =========================
+       SAREE 1
+       ========================= */
+
+    {
+        name: "Nilavu Kasavu",
+
+        description: "Traditional Kerala Kasavu Saree",
+
+        price: "₹ 2,499",
+
+        images: [
+            "IMAGE1.png",
+            "images/nilavu-2.jpg",
+            "images/nilavu-3.jpg",
+            "images/nilavu-4.jpg"
+        ]
+    },
+
+
+    /* =========================
+       SAREE 2
+       ========================= */
+
+    {
+        name: "Chandrika Handloom",
+
+        description: "Elegant Handwoven Saree",
+        
+
+        price: "₹ 3,199",
+
+        images: [
+            "images/chandrika-1.jpg",
+            "images/chandrika-2.jpg",
+            "images/chandrika-3.jpg",
+            "images/chandrika-4.jpg"
+        ]
+    },
+
+
+    /* =========================
+       SAREE 3
+       ========================= */
+
+    {
+        name: "Megham Silk",
+
+        description: "Classic Silk Saree",
+
+        price: "₹ 4,499",
+
+        images: [
+            "images/megham-1.jpg",
+            "images/megham-2.jpg",
+            "images/megham-3.jpg",
+            "images/megham-4.jpg"
+        ]
+    },
+
+
+    /* =========================
+       SAREE 4
+       ========================= */
+
+    {
+        name: "Tharavadu Gold",
+
+        description: "Heritage Inspired Saree",
+
+        price: "₹ 2,999",
+
+        images: [
+            "images/tharavadu-1.jpg",
+            "images/tharavadu-2.jpg",
+            "images/tharavadu-3.jpg",
+            "images/tharavadu-4.jpg"
+        ]
+    },
+
+
+    /* =========================
+       SAREE 5
+       ========================= */
+
+    {
+        name: "Manjari",
+
+        description: "Contemporary Handloom Saree",
+
+        price: "₹ 3,499",
+
+        images: [
+            "images/manjari-1.jpg",
+            "images/manjari-2.jpg",
+            "images/manjari-3.jpg",
+            "images/manjari-4.jpg"
+        ]
+    },
+
+
+    /* =========================
+       SAREE 6
+       ========================= */
+
+    {
+        name: "Varnam",
+
+        description: "Festive Kerala Saree",
+
+        price: "₹ 2,799",
+
+        images: [
+            "images/varnam-1.jpg",
+            "images/varnam-2.jpg",
+            "images/varnam-3.jpg",
+            "images/varnam-4.jpg"
+        ]
+    }
+
+];
+
+
+/* =========================================================
+   4. SOCIAL MEDIA LINKS
+   =========================================================
+
+   Replace # with your real Instagram link.
+
+   ========================================================= */
+
+const instagramLink = "https://www.instagram.com/nilara_loom_story?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==";
+
+const whatsappLink = "https://wa.me/" + whatsappNumber;
+
+
+/* =========================================================
+   DO NOT EDIT BELOW THIS LINE
+   ========================================================= */
+
+</script>
+
+
+<!-- =========================================================
+     WEBSITE CONTENT
+     ========================================================= -->
+
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+HANDWOVEN WITH TRADITION • MADE WITH LOVE
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+
+<h1>NILARA</h1>
+
+<p>LOOM STORY</p>
+
+</div>
+
+
+<nav>
+
+<a href="#home">
+HOME
+</a>
+
+<a href="#collection">
+COLLECTION
+</a>
+
+<a href="#story">
+OUR STORY
+</a>
+
+<a href="#contact">
+CONTACT
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="small-title">
+
+THE ART OF WEAVING
+
+</div>
+
+
+<h2>
+
+NILARA<br>
+LOOM STORY
+
+</h2>
+
+
+<p>
+
+Timeless sarees woven with the warmth of tradition
+and the elegance of today.
+
+</p>
+
+
+<a href="#collection" class="hero-btn">
+
+EXPLORE COLLECTION
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     COLLECTION
+     ========================================================= -->
+
+<section class="section" id="collection">
+
+
+<div class="section-heading">
+
+<span>
+OUR COLLECTION
+</span>
+
+
+<h2>
+
+Stories Woven in Every Thread
+
+</h2>
+
+
+<div class="gold-line"></div>
+
+</div>
+
+
+<div class="products" id="products">
+
+<!-- Sarees are automatically created here -->
+
+</div>
+
+
+</section>
+
+
+<!-- =========================================================
+     OUR STORY
+     ========================================================= -->
+
+<section class="about" id="story">
+
+
+<div class="about-image" id="ourStoryImage">
+
+</div>
+
+
+<div class="about-text">
+
+
+<span>
+OUR STORY
+</span>
+
+
+<h2>
+
+Woven With Tradition
+
+</h2>
+
+
+<p>
+
+Nilara Loom Story celebrates the timeless beauty
+of Indian handlooms. Every saree carries a story
+of craftsmanship, tradition and the hands that bring
+every thread together.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+From the simplicity of Kerala Kasavu to elegant
+handwoven creations, we bring traditional beauty
+into the modern wardrobe.
+
+</p>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURES
+     ========================================================= -->
+
+<section class="section">
+
+
+<div class="features">
+
+
+<div class="feature">
+
+<div class="feature-icon">
+✦
+</div>
+
+<h3>
+Handpicked
+</h3>
+
+<p>
+
+Carefully selected sarees with beautiful colours,
+textures and craftsmanship.
+
+</p>
+
+</div>
+
+
+
+<div class="feature">
+
+<div class="feature-icon">
+❖
+</div>
+
+<h3>
+Handloom Love
+</h3>
+
+<p>
+
+Celebrating the art and heritage behind every
+woven creation.
+
+</p>
+
+</div>
+
+
+
+<div class="feature">
+
+<div class="feature-icon">
+♡
+</div>
+
+<h3>
+Easy Booking
+</h3>
+
+<p>
+
+Choose your favourite saree and book directly
+through WhatsApp.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer id="contact">
+
+
+<div class="footer-logo">
+
+NILARA LOOM STORY
+
+</div>
+
+
+<p>
+
+Traditional threads. Timeless stories.
+
+</p>
+
+
+<div class="social">
+
+
+<a id="instagramLink" href="#" target="_blank">
+
+INSTAGRAM
+
+</a>
+
+
+<a id="footerWhatsapp" href="#" target="_blank">
+
+WHATSAPP
+
+</a>
+
+
+</div>
+
+
+<p style="margin-top:25px;">
+
+© 2026 Nilara Loom Story. All rights reserved.
+
+</p>
+
+
+</footer>
+
+
+<!-- =========================================================
+     INDIVIDUAL SAREE GALLERY
+     ========================================================= -->
+
+<div class="modal" id="sareeModal">
+
+
+<div class="modal-box">
+
+
+<button class="close-modal" onclick="closeModal()">
+
+×
+
+</button>
+
+
+<div class="modal-gallery">
+
+
+<!-- MAIN IMAGE -->
+
+<div class="modal-main-image">
+
+<img id="modalImage" src="" alt="Saree">
+
+</div>
+
+
+<!-- 4 THUMBNAILS -->
+
+<div class="modal-thumbnails" id="modalThumbnails">
+
+</div>
+
+
+<!-- PREVIOUS / NEXT -->
+
+<div class="modal-controls">
+
+
+<button class="modal-control" onclick="previousImage()">
+
+‹ PREVIOUS
+
+</button>
+
+
+<button class="modal-control" onclick="nextImage()">
+
+NEXT ›
+
+</button>
+
+
+</div>
+
+
+<!-- SAREE DETAILS -->
+
+<div class="modal-info">
+
+
+<h2 id="modalTitle"></h2>
+
+
+<p id="modalDescription"></p>
+
+
+<div class="modal-price" id="modalPrice"></div>
+
+
+<a id="modalWhatsapp"
+   class="whatsapp"
+   href="#"
+   target="_blank">
+
+BOOK ON WHATSAPP
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   SET HERO IMAGE
+   ========================================================= */
+
+document.querySelector(".hero").style.backgroundImage =
+    "linear-gradient(rgba(58,28,20,.42),rgba(58,28,20,.42)), url('" +
+    heroImage +
+    "')";
+
+
+/* =========================================================
+   SET OUR STORY IMAGE
+   ========================================================= */
+
+document.getElementById("ourStoryImage").style.backgroundImage =
+    "url('" + ourStoryImage + "')";
+
+
+/* =========================================================
+   SET SOCIAL LINKS
+   ========================================================= */
+
+document.getElementById("instagramLink").href =
+    instagramLink;
+
+document.getElementById("footerWhatsapp").href =
+    whatsappLink;
+
+
+/* =========================================================
+   CREATE SAREE CARDS
+   ========================================================= */
+
+const productsContainer =
+    document.getElementById("products");
+
+
+sarees.forEach((saree,index)=>{
+
+
+    const product =
+        document.createElement("div");
+
+
+    product.className =
+        "product";
+
+
+    product.innerHTML = `
+
+        <div
+            class="product-image"
+            onclick="openModal(${index})"
+        >
+
+            <img
+                id="product-image-${index}"
+                src="${saree.images[0]}"
+                alt="${saree.name}"
+            >
+
+
+            <div class="slider-dots">
+
+                ${saree.images.map((image,i)=>`
+
+                    <div
+                        class="slider-dot ${i === 0 ? "active" : ""}"
+                        id="dot-${index}-${i}">
+                    </div>
+
+                `).join("")}
+
+            </div>
+
+        </div>
+
+
+        <div class="product-info">
+
+
+            <h3>
+
+                ${saree.name}
+
+            </h3>
+
+
+            <p>
+
+                ${saree.description}
+
+            </p>
+
+
+            <div class="price">
+
+                ${saree.price}
+
+            </div>
+
+
+            <a
+                class="whatsapp"
+                href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                    "Hello Nilaara Loom Story, I would like to book the saree: " +
+                    saree.name
+                )}"
+                target="_blank"
+                onclick="event.stopPropagation()"
+            >
+
+                BOOK ON WHATSAPP
+
+            </a>
+
+
+        </div>
+
+    `;
+
+
+    productsContainer.appendChild(product);
+
+});
+
+
+/* =========================================================
+   AUTOMATIC SLIDESHOW
+   ========================================================= */
+
+const currentIndexes =
+    new Array(sarees.length).fill(0);
+
+
+function changeProductImage(productIndex){
+
+
+    currentIndexes[productIndex]++;
+
+
+    if(
+        currentIndexes[productIndex]
+        >= sarees[productIndex].images.length
+    ){
+
+        currentIndexes[productIndex] = 0;
+
+    }
+
+
+    const image =
+        document.getElementById(
+            "product-image-" + productIndex
+        );
+
+
+    image.style.opacity = "0";
+
+
+    setTimeout(()=>{
+
+
+        image.src =
+            sarees[productIndex].images[
+                currentIndexes[productIndex]
+            ];
+
+
+        image.style.opacity = "1";
+
+
+    },250);
+
+
+    /* Update dots */
+
+    sarees[productIndex].images.forEach((_,i)=>{
+
+
+        const dot =
+            document.getElementById(
+                `dot-${productIndex}-${i}`
+            );
+
+
+        dot.classList.toggle(
+            "active",
+            i === currentIndexes[productIndex]
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   CHANGE ALL SAREE IMAGES EVERY 3 SECONDS
+   ========================================================= */
+
+setInterval(()=>{
+
+
+    sarees.forEach((_,index)=>{
+
+        changeProductImage(index);
+
+    });
+
+
+},3000);
+
+
+/* =========================================================
+   INDIVIDUAL GALLERY
+   ========================================================= */
+
+let selectedSaree = 0;
+
+let modalImageIndex = 0;
+
+
+const modal =
+    document.getElementById("sareeModal");
+
+
+const modalImage =
+    document.getElementById("modalImage");
+
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+
+const modalPrice =
+    document.getElementById("modalPrice");
+
+
+const modalThumbnails =
+    document.getElementById("modalThumbnails");
+
+
+const modalWhatsapp =
+    document.getElementById("modalWhatsapp");
+
+
+/* =========================================================
+   OPEN INDIVIDUAL SAREE
+   ========================================================= */
+
+function openModal(index){
+
+
+    selectedSaree = index;
+
+    modalImageIndex = 0;
+
+
+    const saree =
+        sarees[index];
+
+
+    modalTitle.textContent =
+        saree.name;
+
+
+    modalDescription.textContent =
+        saree.description;
+
+
+    modalPrice.textContent =
+        saree.price;
+
+
+    modalWhatsapp.href =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(
+            "Hello Nilaara Loom Story, I would like to book the saree: " +
+            saree.name
+        );
+
+
+    createThumbnails();
+
+
+    updateModalImage();
+
+
+    modal.classList.add("show");
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+/* =========================================================
+   CREATE 4 THUMBNAILS
+   ========================================================= */
+
+function createThumbnails(){
+
+
+    modalThumbnails.innerHTML = "";
+
+
+    const saree =
+        sarees[selectedSaree];
+
+
+    saree.images.forEach((image,index)=>{
+
+
+        const thumbnail =
+            document.createElement("img");
+
+
+        thumbnail.src =
+            image;
+
+
+        thumbnail.className =
+            "modal-thumb" +
+            (index === modalImageIndex
+                ? " active"
+                : "");
+
+
+        thumbnail.onclick =
+            function(){
+
+
+                modalImageIndex =
+                    index;
+
+
+                updateModalImage();
+
+            };
+
+
+        modalThumbnails.appendChild(
+            thumbnail
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   UPDATE MAIN MODAL IMAGE
+   ========================================================= */
+
+function updateModalImage(){
+
+
+    const saree =
+        sarees[selectedSaree];
+
+
+    modalImage.style.opacity =
+        "0";
+
+
+    setTimeout(()=>{
+
+
+        modalImage.src =
+            saree.images[
+                modalImageIndex
+            ];
+
+
+        modalImage.style.opacity =
+            "1";
+
+
+    },150);
+
+
+    const thumbnails =
+        document.querySelectorAll(
+            ".modal-thumb"
+        );
+
+
+    thumbnails.forEach(
+        (thumb,index)=>{
+
+
+            thumb.classList.toggle(
+                "active",
+                index === modalImageIndex
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   NEXT IMAGE
+   ========================================================= */
+
+function nextImage(){
+
+
+    const saree =
+        sarees[selectedSaree];
+
+
+    modalImageIndex++;
+
+
+    if(
+        modalImageIndex >=
+        saree.images.length
+    ){
+
+        modalImageIndex = 0;
+
+    }
+
+
+    updateModalImage();
+
+}
+
+
+/* =========================================================
+   PREVIOUS IMAGE
+   ========================================================= */
+
+function previousImage(){
+
+
+    const saree =
+        sarees[selectedSaree];
+
+
+    modalImageIndex--;
+
+
+    if(modalImageIndex < 0){
+
+        modalImageIndex =
+            saree.images.length - 1;
+
+    }
+
+
+    updateModalImage();
+
+}
+
+
+/* =========================================================
+   CLOSE GALLERY
+   ========================================================= */
+
+function closeModal(){
+
+
+    modal.classList.remove("show");
+
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+/* =========================================================
+   CLICK OUTSIDE GALLERY TO CLOSE
+   ========================================================= */
+
+modal.addEventListener(
+    "click",
+    function(event){
+
+        if(event.target === modal){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   KEYBOARD CONTROLS
+   ========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+
+        if(event.key === "Escape"){
+
+            closeModal();
+
+        }
+
+
+        if(
+            modal.classList.contains("show") &&
+            event.key === "ArrowRight"
+        ){
+
+            nextImage();
+
+        }
+
+
+        if(
+            modal.classList.contains("show") &&
+            event.key === "ArrowLeft"
+        ){
+
+            previousImage();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
